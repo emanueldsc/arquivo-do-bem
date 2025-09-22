@@ -1,0 +1,7 @@
+user=Admin
+password=z^R3m6sUkK12H08uqQ
+email=arquivo-do-bem@mailinator.com
+
+=== Professor 01
+professor01@mailinator.com
+Professor01@

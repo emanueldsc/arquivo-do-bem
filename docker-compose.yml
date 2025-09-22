@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  wordpress:
+    image: wordpress:php8.2-apache
+    container_name: wordpress_app
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: wppass
+      WORDPRESS_DB_NAME: wpdb
+      PHP_UPLOAD_MAX_FILESIZE: 50M
+      PHP_POST_MAX_SIZE: 50M
+    volumes:
+      - ./wordpress:/var/www/html
+      - ./uploads:/var/www/html/wp-content/uploads
+
+  db:
+    image: mysql:8.0
+    container_name: wordpress_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wppass
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./db:/var/lib/mysql
+
+volumes:
+  wordpress:
+  db:

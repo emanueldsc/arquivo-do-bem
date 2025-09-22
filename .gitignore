@@ -1,0 +1,21 @@
+# Ignorar WordPress core (vai ser instalado pelo Docker)
+wordpress/
+
+# Ignorar banco de dados (MySQL)
+db/
+
+# Ignorar uploads e mídias
+wordpress/wp-content/uploads/
+
+# Ignorar cache e logs
+*.log
+*.tmp
+*.sock
+
+# Ignorar arquivos de IDEs/editores
+.vscode/
+.idea/
+
+# Ignorar sistema de arquivos do Mac/Linux/Windows
+.DS_Store
+Thumbs.db
