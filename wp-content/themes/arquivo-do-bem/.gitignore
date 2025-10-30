@@ -1,0 +1,80 @@
+# ====================================
+# Node / Vite / React
+# ====================================
+node_modules/
+dist/
+.vite/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store
+
+# Vite cache
+vite.config.ts.timestamp*
+vite.config.js.timestamp*
+
+# ====================================
+# Docker
+# ====================================
+# Contêineres, volumes e arquivos locais
+.env
+*.env.local
+docker-compose.override.yml
+docker-compose*.bak
+# Logs dos containers
+*.pid
+*.seed
+*.pid.lock
+
+# ====================================
+# WordPress
+# ====================================
+# Núcleo e pastas padrão (não versionar o core)
+wp-admin/
+wp-includes/
+license.txt
+readme.html
+
+# Uploads e mídias
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/cache/
+
+# Arquivos temporários
+wp-content/debug.log
+wp-content/*.tmp
+
+# ====================================
+# Tema "Arquivo do Bem"
+# ====================================
+# Dependências e builds dentro do tema
+wp-content/themes/arquivo-do-bem/node_modules/
+wp-content/themes/arquivo-do-bem/dist/
+wp-content/themes/arquivo-do-bem/.vite/
+wp-content/themes/arquivo-do-bem/*.log
+
+# ====================================
+# Sistema / IDE
+# ====================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+*.local
+Thumbs.db
+
+# ====================================
+# Sistema Operacional
+# ====================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+ehthumbs.db
+Desktop.ini

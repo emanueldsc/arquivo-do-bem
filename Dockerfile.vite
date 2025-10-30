@@ -1,0 +1,18 @@
+# Dockerfile.vite
+FROM node:20
+
+# Diretório de trabalho onde fica o tema
+WORKDIR /var/www/html/wp-content/themes/arquivo-do-bem
+
+# Copia o script para dentro da imagem (fora de qualquer volume)
+COPY dev.sh /usr/local/bin/dev.sh
+RUN chmod +x /usr/local/bin/dev.sh
+
+# Variáveis úteis (pode sobrescrever via compose/.env)
+ENV VITE_PORT=5173 \
+    WP_ORIGIN=http://wordpress \
+    CHOKIDAR_USEPOLLING=true \
+    WATCHPACK_POLLING=true
+
+# Entrypoint roda o script
+ENTRYPOINT ["sh","-lc","/usr/local/bin/dev.sh"]
