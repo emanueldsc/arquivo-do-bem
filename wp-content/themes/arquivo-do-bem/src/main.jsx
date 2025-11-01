@@ -1,8 +1,7 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import axios from 'axios'
-
-console.log('MAIN JSX CARREGOU');
+import { AppShell } from './AppShell'
 
 function App() {
   const [data, setData] = React.useState(null)
@@ -12,9 +11,7 @@ function App() {
   }, [])
 
   return (
-    <div style={{ padding: 4 }}>
-      <p>Emanuel Douglas</p>
-    </div>
+    <AppShell />
   )
 }
 

@@ -9,6 +9,6 @@
 <body <?php body_class(); ?>>
     <div id="page">
         <header class="site-header">
-            <h1 class="site-title"><?php bloginfo('name'); ?></h1>
+            <!-- <h1 class="site-title"><?php bloginfo('name'); ?></h1> -->
         </header>
         <main id="content">
