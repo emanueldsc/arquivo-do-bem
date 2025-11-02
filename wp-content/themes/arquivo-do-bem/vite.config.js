@@ -1,16 +1,33 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-export default defineConfig({
+import path from 'path'
+
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
-  server: {
-    host: true, // aceita conexões externas
-    port: Number(process.env.VITE_PORT) || 5173,
-    strictPort: true,
-    hmr: { host: 'localhost' },
-    proxy: {
-      '/wp-json': { target: 'http://wordpress', changeOrigin: true },
-      '/wp-admin/admin-ajax.php': { target: 'http://wordpress', changeOrigin: true }
+  root: path.resolve(__dirname, 'src'),
+  base: mode === 'production'
+    ? '/wp-content/themes/arquivo-do-bem/dist/'
+    : '/',
+  publicDir: path.resolve(__dirname, 'assets'),
+  build: {
+    outDir: path.resolve(__dirname, 'dist'),
+    emptyOutDir: true,
+    manifest: true,
+    rollupOptions: {
+      // 🔴 AJUSTE para o SEU entry real
+      input: '/react/main.jsx'
+      // se seu entry for src/main.jsx => input: '/main.jsx'
     }
   },
-  build: { outDir: 'dist', emptyOutDir: true }
-})
+  server: {
+    port: 5173,
+    strictPort: true,
+    hmr: { host: 'localhost' }
+  },
+  resolve: {
+    // ✅ alias @ aponta para src/
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
+  }
+}))

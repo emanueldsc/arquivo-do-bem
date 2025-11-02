@@ -1,15 +1,13 @@
 import style from "./Logo.module.css";
 
 export function Logo() {
-  const envAssets = import.meta.env.VITE_ASSETS_URL;
-  const wpAssets =
-    typeof window !== "undefined" && window.__WP_DATA__?.assetsUrl;
-  const defaultAssets = "http://localhost:5173/assets";
+  const assetsBase = window.__WP_DATA__?.assetsUrl
 
-  const assetsBase = envAssets || wpAssets || defaultAssets;
-  const logoSrc = `${defaultAssets}/logo.png`;
-
+  console.log('assetsBase', assetsBase)
   console.log("logoSrc", logoSrc);
+  
+  const logoSrc = `assets/logo.png`;
+
 
   return (
     <div className={style.container}>
