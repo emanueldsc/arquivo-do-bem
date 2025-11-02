@@ -1,17 +1,11 @@
 import style from "./Logo.module.css";
+import logoUrl from "@/assets/logo.png";
 
 export function Logo() {
-  const assetsBase = window.__WP_DATA__?.assetsUrl
-
-  console.log('assetsBase', assetsBase)
-  console.log("logoSrc", logoSrc);
-  
-  const logoSrc = `assets/logo.png`;
-
-
+  console.log('---->',logoUrl)
   return (
     <div className={style.container}>
-      <img className={style.logo} src={logoSrc} alt="Logo" />
+      <img className={style.logo} src={logoUrl} alt="Logo" />
       <div>
         <h1 className={style.arquivo}>Arquivo</h1>
         <h1 className={style.do}>do</h1>
