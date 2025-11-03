@@ -5,7 +5,7 @@ export function Layout() {
   return (
     <>
       <NavBar />
-      <main style={{ padding: 16 }}>
+      <main style={{ paddingInline: 16 }}>
         <Outlet />
       </main>
     </>

@@ -1,6 +1,7 @@
 import { createHashRouter } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { Page } from "./pages/Page";
+import { Home } from "./pages/Home";
 
 export const router = createHashRouter([
   {
@@ -10,9 +11,7 @@ export const router = createHashRouter([
       {
         index: true,
         element: (
-          <Page title="Home" subtitle="Bem-vindo à aplicação">
-            <p>Conteúdo temporário da Home.</p>
-          </Page>
+          <Home />
         ),
       },
       {
